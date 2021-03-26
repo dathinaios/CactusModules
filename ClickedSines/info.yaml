@@ -10,3 +10,10 @@ tags:
   - sinosc
 
 author: Orestis Karamanlis
+
+preview: |
+  {
+    arg instance; var sound; 
+    sound = instance.run('ClickedSines', (note: [63, 65, 74], pos: Pseq([-1, 0, 1, 0], inf), dur: 1)); 
+    { 3.wait; sound.stop; sound.free; sound.clear; }.fork;
+  }

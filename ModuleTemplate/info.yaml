@@ -4,9 +4,13 @@ description:
   This is an example module skeleton.
 
 tags:
-  - tag1
-  - tag2
-  - tag3
-  - tag4
+  - template
+  - example
 
 author: Dionysis Athinaios
+
+preview: |
+  {
+    arg instance; 
+    instance.run(\ModuleTemplate, (a: 5, b: 777));
+  }

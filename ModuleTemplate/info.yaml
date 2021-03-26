@@ -1,6 +1,6 @@
 name: Module Template
 
-description: 
+description:
   This is an example module skeleton.
 
 tags:
@@ -9,8 +9,15 @@ tags:
 
 author: Dionysis Athinaios
 
+example: |
+  {
+    arg instance;
+    instance.run(\ModuleTemplate, (a: 5, b: 777));
+  }
+
 preview: |
   {
-    arg instance; 
-    instance.run(\ModuleTemplate, (a: 5, b: 777), local: false);
+    arg instance;
+    instance.run(\ModuleTemplate, (a: 5, b: 777, global: true));
   }
+

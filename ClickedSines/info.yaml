@@ -1,6 +1,6 @@
 name: Clicked Sines
 
-description: 
+description:
   This is a simple repeating chord or melody using sine waves.
 
 tags:
@@ -13,7 +13,7 @@ author: Orestis Karamanlis
 
 preview: |
   {
-    arg instance; var sound; 
-    sound = instance.run('ClickedSines', (note: [63, 65, 74], pos: Pseq([-1, 0, 1, 0], inf), dur: 1)); 
+    arg instance; var sound;
+    sound = instance.run('ClickedSines', (note: [63, 65, 74], pos: Pseq([-1, 0, 1, 0], inf), dur: 1, local: false));
     { 3.wait; sound.stop; sound.free; sound.clear; }.fork;
   }

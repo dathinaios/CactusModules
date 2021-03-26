@@ -12,5 +12,5 @@ author: Dionysis Athinaios
 preview: |
   {
     arg instance; 
-    instance.run(\ModuleTemplate, (a: 5, b: 777));
+    instance.run(\ModuleTemplate, (a: 5, b: 777), local: false);
   }

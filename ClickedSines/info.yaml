@@ -12,13 +12,12 @@ tags:
 author: Orestis Karamanlis
 
 example: |
-  {
-    arg instance; var sound;
-    sound = instance.run(
-       'ClickedSines',
-       (note: [63, 65, 74], pos: Pseq([-1, 0, 1, 0], inf), dur: 1)
+  ( // use your modules instance in place of m
+    m.run(
+      'ClickedSines',
+      (note: [63, 65, 74], pos: Pseq([-1, 0, 1, 0], inf), dur: 1)
     );
-  }
+  );
 
 preview: |
   {

@@ -2,6 +2,8 @@ name: Clicked Sines
 
 description:
   This is a simple repeating chord or melody using sine waves.
+  Run the process repeatadly with different fadeTime values
+  to crossfade the changes and create organic transitions.
 
 tags:
   - chord
@@ -15,7 +17,8 @@ example: |
   ( // use your modules instance in place of m
     m.run(
       'ClickedSines',
-      (note: [63, 65, 74], pos: Pseq([-1, 0, 1, 0], inf), dur: 1)
+      (note: [63, 65, 74], pos: Pseq([-1, 0, 1, 0], inf),
+       dur: 1, fadeTime: 4)
     );
   );
 

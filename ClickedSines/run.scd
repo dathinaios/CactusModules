@@ -1,7 +1,7 @@
 
 {
   arg note = [33, 40], dec = 2, amp = 0.6, 
-  out = 0, pos = 0, dur = 2;
+  out = 0, pos = 0, dur = 2, fadeTime;
 
   Pdef(\xSin, 
     Pbind(
@@ -13,5 +13,5 @@
       \pos, pos, 
       \dur, dur
     )
-  ).play;
+  ).fadeTime_(fadeTime).play;
 }

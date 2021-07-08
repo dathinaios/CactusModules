@@ -1,1 +1,3 @@
-"tear down for granulation module".postln;
+{ arg module;
+  "tear down for granulation module has been called".postln;
+}

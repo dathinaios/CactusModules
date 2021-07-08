@@ -1,1 +1,3 @@
-"-> Cleaning up from ModuleTemplate".postln;
+{ arg module;
+  "-> Cleaning up from ModuleTemplate".postln;
+}

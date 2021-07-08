@@ -24,9 +24,9 @@ example: |
 
 preview: |
   {
-    arg instance; var sound;
-    sound = instance.run(
+    arg modules; var sound;
+    sound = modules.run(
        'ClickedSines',
-       (note: [63, 65, 74], pos: Pseq([-1, 0, 1, 0], inf), dur: 1, global: true));
+       [\note, [63, 65, 74], \pos, Pseq([-1, 0, 1, 0], inf), \dur, 1, \isGlobalModule]);
     { 3.wait; sound.stop; }.fork;
   }

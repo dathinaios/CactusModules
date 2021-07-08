@@ -17,7 +17,7 @@ example: |
 
 preview: |
   {
-    arg instance;
-    instance.run(\ModuleTemplate, (a: 5, b: 777, global: true));
+    arg modules;
+    modules.run(\ModuleTemplate, (a: 5, b: 777, global: true));
   }
 

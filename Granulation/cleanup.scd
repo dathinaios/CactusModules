@@ -1,5 +1,6 @@
 
 { arg module;
+  module.postln;
   module.soundProcess.stop
 }
 

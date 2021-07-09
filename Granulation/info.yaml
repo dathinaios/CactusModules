@@ -52,7 +52,7 @@ preview: |
     b = Platform.resourceDir +/+ "sounds/a11wlk01.wav";
     b = Buffer.read(Server.default, b);
     {
-      1.wait;
+      0.2.wait;
       sound = modules.run('Granulation', [
         \buffer, b,
         \density, { MouseY.kr(0.02, 39) }, 
@@ -62,10 +62,9 @@ preview: |
         \pitchshift, {SinOsc.kr(0.2, mul: 0.2, add: 1)},
         \bsplice, 0.003, 
         \esplice, 0.0497,
-        \pan, 0,
-        \isGlobalModule
-      ]);
-      3.wait;
-      sound.stop;
+        \pan, 0
+      ], options: (global: true));
+      4.wait;
+      sound.stop; b.free;
   }.fork;
   }

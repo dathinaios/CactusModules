@@ -27,6 +27,8 @@ preview: |
     arg modules; var sound;
     sound = modules.run(
        'ClickedSines',
-       [\note, [63, 65, 74], \pos, Pseq([-1, 0, 1, 0], inf), \dur, 1, \isGlobalModule]);
+       [\note, [63, 65, 74], \pos, Pseq([-1, 0, 1, 0], inf), \dur, 1],
+       options: (global: true)
+    );
     { 3.wait; sound.stop; }.fork;
   }

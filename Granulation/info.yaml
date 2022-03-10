@@ -56,7 +56,7 @@ preview: |
         \buffer, b,
         \density, 10,
         \velocity, 0.3, 
-        \grainsize, 0.2,
+        \grainsize, 0.04,
         \grainAmp, 1,
         \pitchshift, 1,
         \bsplice, 0.003, 

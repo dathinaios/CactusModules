@@ -2,7 +2,6 @@ name: Granulation
 
 description: |
    Dependencies: sc3-plugins
-   Note: UGens can be passed in as arguments as long as they are wrapped in a function
 
    velocity: Speed of advance in infile, relative to outfile (Range: >= 0) This is the inverse of a timestretch (i.e., 1/n\: higher values make the output shorter, lower values – less than 1 – make it longer). This permits an infinite timestretch.
 
@@ -35,11 +34,11 @@ example: |
   (
   c.runModule('Granulation', [
     \buffer, c.buf("/baba"), 
-    \density, { MouseY.kr(0.02, 39) }, 
+    \density, 10,
     \velocity, 0.3, 
-    \grainsize, {MouseX.kr(0.05, 0.4)},
+    \grainsize, 0.2,
     \grainAmp, 1,
-    \pitchshift, {SinOsc.kr(0.2, mul: 0.2, add: 1)},
+    \pitchshift, 1,
     \bsplice, 0.003, 
     \esplice, 0.0497,
     \pan, 0
@@ -55,11 +54,11 @@ preview: |
       0.2.wait;
       sound = modules.run('Granulation', [
         \buffer, b,
-        \density, { MouseY.kr(0.02, 39) }, 
+        \density, 10,
         \velocity, 0.3, 
-        \grainsize, {MouseX.kr(0.05, 0.4)},
+        \grainsize, 0.2,
         \grainAmp, 1,
-        \pitchshift, {SinOsc.kr(0.2, mul: 0.2, add: 1)},
+        \pitchshift, 1,
         \bsplice, 0.003, 
         \esplice, 0.0497,
         \pan, 0

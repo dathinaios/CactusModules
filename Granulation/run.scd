@@ -20,18 +20,17 @@
 
     bufDur = BufDur.ir(buffer);
 
-    phasor = Phasor.ar(rate: velocity.value/SampleRate.ir);
+    phasor = Phasor.ar(rate: velocity/SampleRate.ir);
     phasor = phasor.linlin(0,1,0,bufDur);
 
-    trig = Impulse.ar(density.value);
+    trig = Impulse.ar(density);
 
     TGrains3.ar(
-      numChannels: 2, trigger: trig, bufnum: buffer, rate: pitchshift.value,
-      centerPos: phasor, dur: grainsize.value, pan: pan.value, amp: grainAmp.value, 
+      numChannels: 2, trigger: trig, bufnum: buffer, rate: pitchshift,
+      centerPos: phasor, dur: grainsize, pan: pan, amp: grainAmp,
       att: bsplice, dec: esplice, window: windowBuf.bufnum, interp: 4
     );
   };
 
   nodeProxy.play;
-
 }

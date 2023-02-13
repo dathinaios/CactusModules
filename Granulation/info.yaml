@@ -32,8 +32,10 @@ author: Dionysis Athinaios
 
 example: |
   (
+  b = Platform.resourceDir +/+ "sounds/a11wlk01.wav";
+  b = Buffer.read(Server.default, b);
   c.runModule('Granulation', [
-    \buffer, c.buf("/baba"), 
+    \buffer, b, 
     \density, 10,
     \velocity, 0.3, 
     \grainsize, 0.2,
@@ -65,5 +67,5 @@ preview: |
       ], options: (global: true));
       4.wait;
       sound.stop; b.free;
-  }.fork;
+    }.fork;
   }

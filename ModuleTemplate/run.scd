@@ -23,6 +23,9 @@
   a.debug("This is arg a");
   b.debug("This is arg b");
 
-  "Here we return a string but normally we would return something sound related"
+  // The last thing returned is stored in the module
+  // instance variable soundProcess. Typically called
+  // in stop.scd to stop the sound.
+  "soundProcess test"
 
 }

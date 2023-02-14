@@ -30,16 +30,20 @@ example: |
   (
   b = Platform.resourceDir +/+ "sounds/a11wlk01.wav";
   b = Buffer.read(Server.default, b);
-  c.runModule('Granulation', [
-    \buffer, b,
-    \density, 10,
-    \velocity, 0.3,
-    \grainsize, 0.2,
-    \grainAmp, 1,
-    \pitchshift, 1,
-    \bsplice, 0.003,
-    \esplice, 0.0497,
-    \pan, 0
+  // assumes c is a Cactus instance
+  c.runModule('Granulation Range', [
+      \buffer, b,
+      \density, 15,
+      \velocity, 0.3,
+      \grainsize, 0.05,
+      \grainAmpMin, 0.5,
+      \grainAmpMax, 1,
+      \pitchshiftMin, 0.9,
+      \pitchshiftMax, 1.1,
+      \panMin, -0.5,
+      \panMax, 0.5,
+      \bsplice, 0.003,
+      \esplice, 0.0497
   ]);
   );
 
@@ -50,16 +54,19 @@ preview: |
     b = Buffer.read(Server.default, b);
     {
       0.2.wait;
-      sound = modules.run('Granulation', [
+      sound = modules.run('Granulation Range', [
         \buffer, b,
-        \density, 10,
+        \density, 15,
         \velocity, 0.3,
-        \grainsize, 0.04,
-        \grainAmp, 1,
-        \pitchshift, 1,
+        \grainsize, 0.05,
+        \grainAmpMin, 0.5,
+        \grainAmpMax, 1,
+        \pitchshiftMin, 0.9,
+        \pitchshiftMax, 1.1,
+        \panMin, -0.5,
+        \panMax, 0.5,
         \bsplice, 0.003,
-        \esplice, 0.0497,
-        \pan, 0
+        \esplice, 0.0497
       ], options: (global: true));
       4.wait;
       sound.stop; b.free;

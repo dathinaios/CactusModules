@@ -1,7 +1,8 @@
 
 {
-  arg buffer, velocity = 1, density = 1, grainsize = 0.05, pitchshift = 1,
-      grainAmp = 1, bsplice = 0.005, esplice = 0.005, pan = 0;
+  arg buffer, velocity = 1, density = 1, grainsize = 0.05, pitchshiftMin = 1,
+      pitchshiftMax = 1, grainAmpMin = 1, grainAmpMax = 1, bsplice = 0.005,
+      esplice = 0.005, panMin = 0, panMax = 0;
   var nodeProxy;
   var windowBuf, windowSig;
 
@@ -17,6 +18,7 @@
   nodeProxy.source = {
     var bufDur, trig, env, envgen;
     var densityEnv, phasor;
+    var pitchshift, grainAmp, pan;
 
     bufDur = BufDur.ir(buffer);
 
@@ -24,6 +26,10 @@
     phasor = phasor.linlin(0,1,0,bufDur);
 
     trig = Impulse.ar(density);
+
+    pitchshift = TRand.ar(pitchshiftMin, pitchshiftMax, trig);
+    grainAmp = TRand.ar(grainAmpMin, grainAmpMax, trig);
+    pan = TRand.ar(panMin, panMax, trig);
 
     TGrains3.ar(
       numChannels: 2, trigger: trig, bufnum: buffer, rate: pitchshift,

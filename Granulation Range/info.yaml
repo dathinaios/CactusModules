@@ -1,16 +1,21 @@
-name: Granulation
+name: Granulation Range
 
 description: |
    Dependencies: sc3-plugins
 
+   A variation of the Granulation module that uses ranges for amp, pan and pitch. This should be enough as a start to hack other parameters as ranges.
+
    velocity: Speed of advance in infile, relative to outfile (Range: >= 0) This is the inverse of a timestretch (i.e., 1/n\: higher values make the output shorter, lower values – less than 1 – make it longer). This permits an infinite timestretch.
    density: Amount of grain overlap (Range: > 0) Values < 1 leaves intergrain silence, i.e., gaps. Extremely small values will cease to perform predictably.
-   grainsize: Size of the grains in milliseconds (must be larger than bsplice + esplice)
-   pitchshift: Transposition of grains rate.
-   grainAmp: Amplitude of individual grains
-   bsplice: Begin splice,  length of start-splices on grains in seconds
-   esplice: End splice,  length of end-splices on grains in seconds
-   pan:  Set stereo position in outfile (-1, 1)
+   grainsize: Size of the grains in milliseconds (must be larger than bsplice + esplice).
+   pitchshiftMin: Minimum transposition of grains rate.
+   pitchshiftMax: Maximum transposition of grains rate.
+   grainAmpMin: Minimum amplitude of individual grains.
+   grainAmpMax: Maximum amplitude of individual grains.
+   bsplice: Begin splice,  length of start-splices on grains in seconds.
+   esplice: End splice,  length of end-splices on grains in seconds.
+   panMin:  Minimum stereo position in outfile (-1, 1).
+   panMax:  Maximum stereo position in outfile (-1, 1).
 
 tags:
   - grain
